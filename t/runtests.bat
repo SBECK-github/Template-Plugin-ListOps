@@ -1,1 +1,1 @@
-perl -I../lib 01.t 1
+perl -I../lib 1.t 1

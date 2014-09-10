@@ -32,21 +32,21 @@ Template::Plugin::ListOps makes the following methods available:
 
 =over 4
 
-=item unique
+=item B<unique>
 
    [% list = ListOps.unique(list) %]
 
 This removes any duplicates in a list and returns a list containing only
 unique elements.
 
-=item compact
+=item B<compact>
 
    [% list = ListOps.compact(list) %]
 
 This removes any undefs from a list and returns a list containing only
 defined elements.
 
-=item union
+=item B<union>
 
    [% list = ListOps.union(list1,list2) %]
    [% list = ListOps.union(list1,list2,op) %]
@@ -60,7 +60,7 @@ removed.
 If op is "duplicates", the lists are strictly added to each other and
 all duplicates are preserved.
 
-=item difference
+=item B<difference>
 
    [% list = ListOps.difference(list1,list2) %]
    [% list = ListOps.difference(list1,list2,op) %]
@@ -80,7 +80,7 @@ list.
 
     difference([a a b c],[a],"duplicates")  => (a b c)
 
-=item intersection
+=item B<intersection>
 
    [% list = ListOps.intersection(list1,list2) %]
    [% list = ListOps.intersection(list1,list2,op) %]
@@ -100,7 +100,7 @@ a value that appears in both lists.
 
     intersection([a a b c],[a a a b],"duplicates") => (a a b)
 
-=item symmetric_difference
+=item B<symmetric_difference>
 
    [% list = ListOps.symmetric_difference(list1,list2) %]
    [% list = ListOps.symmetric_difference(list1,list2,op) %]
@@ -120,14 +120,14 @@ single value in the other list.
 
     symmetric_difference([a a b c],[a a a b],"duplicates") => (a c)
 
-=item at
+=item B<at>
 
    [% ele = ListOps.at(list,pos) %]
 
 This returns the elements at the specified position. Positions are
 numbered starting at 0.
 
-=item sorted
+=item B<sorted>
 
    [% list = ListOps.sorted(list) %]
    [% list = ListOps.sorted(list,method [,arg,arg,...]) %]
@@ -152,21 +152,21 @@ The following methods are available for backwards compatibility:
 
 If method is not given, it defaults to alphabetic.
 
-=item join
+=item B<join>
 
    [% out = ListOps.join(list,string) %]
 
 This returns the elements joined into a string using the given string
 as a separator.
 
-=item first, last
+=item B<first, last>
 
    [% ele = ListOps.first(list) %]
    [% ele = ListOps.last(list) %]
 
 These return the first or last elements of the list.
 
-=item shiftval, popval
+=item B<shiftval, popval>
 
    [% ele = ListOps.shiftval(list) %]
    [% ele = ListOps.popval(list) %]
@@ -175,7 +175,7 @@ These remove the first or last elements of the list and return it.
 
 The lists passed in ARE modified.
 
-=item unshiftval, pushval
+=item B<unshiftval, pushval>
 
    [% list = ListOps.unshiftval(list,vals) %]
    [% list = ListOps.pushval(list,vals) %]
@@ -183,7 +183,7 @@ The lists passed in ARE modified.
 These add the vals (which can be a single value or a list of values) to
 either the start or end of the list.
 
-=item minval, maxval, minalph, maxalph
+=item B<minval, maxval, minalph, maxalph>
 
    [% ele = ListOps.minval(list) %]
    [% ele = ListOps.maxval(list) %]
@@ -193,20 +193,20 @@ either the start or end of the list.
 These return the minimum or maximum numerical value in list or
 the first and last values in an alphabetically sorted list.
 
-=item impose
+=item B<impose>
 
    [% list = ListOps.impose(list,string,placement) %]
 
 This appends or prepends a string to every element in the list. placement
 can be "append" or "prepend" (if it is absent, it defaults to "append").
 
-=item reverse
+=item B<reverse>
 
    [% list = ListOps.reverse(list) %]
 
 This reverses the list.
 
-=item rotate
+=item B<rotate>
 
    [% list = ListOps.rotate(list,direction,num) %]
 
@@ -217,13 +217,13 @@ ltof, the last element is removed and moved to the front of the list.
 
 This will happen num number of times (which defaults to 1).
 
-=item count
+=item B<count>
 
    [% num = ListOps.count(list,val) %]
 
 This counts the number of times val appears in the list.
 
-=item delete
+=item B<delete>
 
    [% list = ListOps.delete(list,val) %]
    [% list = ListOps.delete(list,val,op) %]
@@ -237,7 +237,7 @@ If op is "unique", every occurence of val is removed from the list.
 If op is "duplicates", duplicates are allowed and only the first
 occurence of val is removed from the list.
 
-=item is_equal, not_equal
+=item B<is_equal, not_equal>
 
    [% flag = ListOps.is_equal(list1,list2) %]
    [% flag = ListOps.is_equal(list1,list2,op) %]
@@ -255,13 +255,13 @@ If "op" is "unique", duplicates are ignored, so (a,a,b) = (a,b).
 If "op" is "duplicates", the lists are strictly evaluated, and all
 duplicates are kept.
 
-=item clear
+=item B<clear>
 
    [% list = ListOps.clear(list) %]
 
 This returns an empty list.
 
-=item fill
+=item B<fill>
 
    [% list = ListOps.fill(list,val,start,length) %]
 
@@ -272,13 +272,13 @@ it defaults to 0. If length is not passed in, it default to the end of
 the list. If length refers past the end of the list, new values are
 added to the end of the list.
 
-=item splice
+=item B<splice>
 
    [% list = ListOps.splice(list,start,length,vals) %]
 
 This performs the perl splice command on a list.
 
-=item indexval, rindexval
+=item B<indexval, rindexval>
 
    [% num = ListOps.indexval(list,val) %]
    [% num = ListOps.rindexval(list,val) %]
@@ -286,7 +286,7 @@ This performs the perl splice command on a list.
 This returns the index of the first/last occurence of val in the list
 (or undef if the value doesn't occur).
 
-=item set
+=item B<set>
 
    [% list = ListOps.set(list,index,val) %]
 
