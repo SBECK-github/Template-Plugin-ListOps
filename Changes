@@ -2,32 +2,32 @@ Written by:
    Sullivan Beck (sbeck@cpan.org)
 Any suggestions, bug reports, or donations :-) should be sent to me.
 
-1.00  2007-08-16
-  - Initial release
-
-1.01  2007-12-17
-  - Added op to delete function.
-  - Modified sorted to use Sort::DataTypes.
-
-1.02  2008-05-05
-  - Added Build.PL and several other things to meet requirements on
-    http://cpants.perl.org/
-
-1.03  2008-05-08
-  - Additional changes to meet requirements on http://cpants.perl.org/
-
-1.04  2008-05-09
-  - Final changes to meet requirements on http://cpants.perl.org/
-  - Bug fix so it won't fail with "Too early to specify a build action"
-
-2.00  2009-04-14
-  - Moved list operations to Set::ArrayAlt and rewrote functions here
-    as wrappers around that module.
+2.02
+  - Changed HISTORY file to new Changes specification.
+  - Put repository in GitHub.  Gabor Szabo
 
 2.01  2010-02-25
   - Set::ArrayAlt renamed to Array::AsObject
   - Converted test suite to Test::Inter
 
-2.02
-  - Changed HISTORY file to new Changes specification.
-  - Put repository in GitHub.  Gabor Szabo
+2.00  2009-04-14
+  - Moved list operations to Set::ArrayAlt and rewrote functions here
+    as wrappers around that module.
+
+1.04  2008-05-09
+  - Final changes to meet requirements on http://cpants.perl.org/
+  - Bug fix so it won't fail with "Too early to specify a build action"
+
+1.03  2008-05-08
+  - Additional changes to meet requirements on http://cpants.perl.org/
+
+1.02  2008-05-05
+  - Added Build.PL and several other things to meet requirements on
+    http://cpants.perl.org/
+
+1.01  2007-12-17
+  - Added op to delete function.
+  - Modified sorted to use Sort::DataTypes.
+
+1.00  2007-08-16
+  - Initial release
